@@ -1,6 +1,6 @@
 import * as rp from 'request-promise';
 
-async function getIP() {
+async function getIP(): Promise<string> {
     try {
         let data = await rp.get({url: 'http://ipinfo.io/ip'});
 
@@ -12,5 +12,6 @@ async function getIP() {
     }
 }
 
-let ip = getIP();
-console.log('My IP: ' + ip);
+getIP().then((ip) => {
+    console.log('My IP: ' + ip);
+});
