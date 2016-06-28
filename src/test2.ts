@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import * as rp from 'request-promise';
 
 async function getIP(): Promise<string> {
